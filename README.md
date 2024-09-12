@@ -10,47 +10,50 @@ Elastic SIEM (Security Information and Event Management) is a comprehensive secu
 
 <h2>Lab Objectives</h2>
 <b>
-This lab is the walkthrough of my approach to building an Elastic SIEM lab set up in a home lab environment using Elastic SIEM within a Kali Linux VM, where data is forwarded from the VM to the SIEM through the Elastic Defend agent. In this lab, security events are generated on the Kali Linux VM using Nmap, and these logs are then queried and analysed within the Elastic web interface. To enhance visibility and monitoring, a dashboard is created to visualise the security events, and  an alert system to notify when specific security events are detected.
+The lab is my walkthrough approach to setting up a mini corporate network in a home lab by designing a simple network architecture with a subnet layout, including a Domain Controller (DC) and client machine, assigning static IPs to the DC and configuring DHCP for clients. Install Windows Server on the DC, promote it to a Domain Controller by installing the AD DS role, and set up a new forest with a domain name. Next, we will configure the internal DNS settings on the DC, set clients to use it as their DNS server, and configure the NAT. We will then use Active Directory Users and Computers to create and manage user accounts and organizational units (OUs), setting permissions and updating attributes as needed. Finally, we will prepare a Windows client machine, join it to the domain by configuring system properties, and verify that it integrates properly with domain resources and policies.
 </b>
 
 <h2>Link to hands on step-by-step guide on how to perform this project</h2>
 
-- <b>https://medium.com/@mxyiwa/how-to-build-an-elastic-siem-lab-8ebd0bd74f28</b>
+- <b>https://medium.com/@mxyiwa/how-to-setup-an-active-directory-corporate-network-home-lab-3fcc0326bef1</b>
 
 ## Skills Learned / Developed
 
-- <b>Advanced understanding of Elastic SIEM concepts and practical application.</b>
-- <b>Ability to generate and recognize attack signatures and patterns.</b>
-- <b>Expertise in dashboard creation in the Elastic SIEM to visualise security events and data patterns.</b>
-- <b>Proficiency in querying, analysing, and interpreting security event logs.</b>
-- <b>Ability to troubleshoot issues during the Elastic Agent installation, such as modifying commands based on archiitecture (x86_64 to arm64).</b>
-- <b>Enhanced knolwedge to develop configurations to continuously generate and monitor security events to improve SIEM effectiveness.</b>  
+- <b>Gain expertise in configuring and managing Active Directory (AD), including creating and managing users, groups, and organizational units (OUs), and understanding Group Policy for centralised management.</b>
+- <b>Learned to install, configure, and manage Windows Server roles and features, including setting up a domain controller and understanding its role in network authentication and authorisation.</b>
+- <b>Developed network settings configuration skills for both server and client VMs, including IP addressing, DNS, and network connectivity to ensure seamless communication between domain controller and client machines.</b>
+- <b>Gained expertise in the VirtualBox virtualisation platforms, to set up and manage virtual machines, including resource allocation and snapshot management.</b>
+- <b>Developed deep understanding for security best practices for AD environments, including setting up and managing permissions, implementing security policies, and securing both the domain controller and client machines.</b>
+- <b>Enhanced problem-solving skills by diagnosing and resolving issues related to scope activation, network connectivity, and other aspects of server and client configuration.</b>  
 
 ## Tools / Technologies Used
 
-- <b>Parallels VM</b>
-- <b>Kali Linux</b>
-- <b>Elastic SIEM</b>
-- <b>Elastic Defend Agent</b> 
+- <b>Oracle's VirtualBox</b>
+- <b>Windows 10 ISO Image</b>
+- <b>Windows Server 2022 ISO</b>
+- <b>Draw.io (_for the network diagram_)</b> 
 
 ## Steps
 
-- <b>Step 1: Set up an Elastic Account.</b> 
-- <b>Step 2: Set up a Kali Linux VM.</b> 
-- <b>Step 3: Install Elastic Defend as the Software Agent to Collect Logs and Forward the Audit logs and Telemetry from the Kali Linux VM to the Elastic SIEM.</b> 
-- <b>Step 4: Generate Security Events on the Kali Linux VM using Nmap.</b> 
-- <b>Step 5: Query and analyse the Security Event logs generated in the Elastic SIEM using the Elastic web interface.</b> 
-- <b>Step 6: Create dashboards to visualise the Security Events.</b> 
-- <b>Step 7: Create alerts to notify the security events that are detected.</b> 
-
+- <b>Step 1: Download VirtualBox and its Extension Pack
+- <b>Step 2: Create a Domain Controller Virtual Machine
+- <b>Step 3: Configure the DC Virtual Machine
+- <b>Step 4: Server Installation on the DC VM
+- <b>Step 5: Windows Server Launch & VM Guest Edition Setup Installation
+- <b>Step 6: Set Up an IP Address for the Internal Network
+- <b>Step 7: Install Active Directory Domain Services (AD DS)
+- <b>Step 8: Create a Dedicated Domain Admin Account
+- <b>Step 9: Sign in to the Dedicated Domain Admin Account
+- <b>Step 10: Install RAS / NAT
+- <b>Step 11: Set Up a DHCP Server on the DC VM
+- <b>Step 12: Set up the DHCP Scope
+- <b>Step 13: Create Users with a Custom PowerShell Script
+- <b>Step 14: Create the Client’s (Windows 10) VM
+- <b>Step 15: Change the Client’s VM and Join the Domain
+- <b>Step 16: Log into the Client’s VM with any of the Created Users
 
 ## Conclusion
-<b>In this lab, I learned to build an Elastic SIEM lab that involved setting up a free Elastic account and configuring a Kali Linux VM for data collection using the Elastic Defend agent. This lab was designed to generate security events with Nmap, which were queried and analysed through the Elastic web interface. A dashboard was created to visualise these security events, and an alert system was implemented to provide real-time notifications for detected threats. This lab aimed to gain practical experience in deploying and managing an Elastic SIEM environment, which will enhance my ability to monitor and respond to security incidents effectively. Thanks for reading!</b>
-
-<h2>Elastic SIEM Dashboard after running a Nmap Scan within 30 minutes of deployment</h2>
-
-<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/W41k8xCQ/scan.png' border='0' alt='Screenshot-2023-09-05-at-17-54-28'/></a>
-<br />
+<b>This lab was designed to simulate how an Active Directory network is created and managed to serve as a centralised system that allows the administrator to manage users, devices, and resources across an organisation’s network and also make sure its IT infrastructure is secured.. Thanks for reading!</b>
 
 <!--
  ```diff
